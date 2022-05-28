@@ -83,6 +83,7 @@ body {
 }
 
 #inputContainer label {
+  display: block;
 	color: #ff89;
     font-size: 13px;
     margin-top: 15px;
@@ -130,3 +131,52 @@ body {
 #loginForm {
   display: none;
 }
+
+#loginText {
+  
+  padding: 2em;
+  display: table-cell;
+  max-width: 33ch;
+
+}
+
+
+#loginText h1 {
+	color: hsl(185deg 74% 55%);
+	font-size: 3rem;
+	font-weight: 600;
+}
+
+#loginText h2 {
+	margin: 1.5em 0;
+}
+
+ul {
+	padding: 0;
+}
+
+li {
+	font-size: 1.1rem;
+	list-style-type: none;
+  padding: 0.25em 1.5em;
+  /* background-color: green; */
+  background-image: url(../svg/check.svg);
+  background-repeat: no-repeat;
+  fill: #fff;
+  stroke: #fff;
+}
+
+.icon-check {
+  width: 40px;
+  height: 40px;
+
+}
+
+
+
+
+#inputContainer .errorMessage {
+  color: orangered;
+  font-size: 0.9rem;
+}
+

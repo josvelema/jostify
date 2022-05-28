@@ -22,4 +22,8 @@ if (isset($_SESSION['userLoggedIn'])) {
   <h1>Jostify</h1>
 </body>
 
+<footer id="nowPlayingBarContainer">
+  jos
+</footer>
+
 </html>

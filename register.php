@@ -27,10 +27,10 @@ function getInputValue($name)
 </head>
 
 <body>
-<?php 
-if(isset($_POST['registerButton'])) {
+  <?php
+  if (isset($_POST['registerButton'])) {
 
-  echo '
+    echo '
   <script>
   $(document).ready(function() {
     $("#loginForm").hide();
@@ -39,8 +39,8 @@ if(isset($_POST['registerButton'])) {
   });
   </script>
   ';
-} else {
-  echo '
+  } else {
+    echo '
   <script>
   $(document).ready(function() {
     $("#loginForm").show();
@@ -50,10 +50,9 @@ if(isset($_POST['registerButton'])) {
   </script>
   
   ';
-  
-}
+  }
 
-?>
+  ?>
 
 
   <div id="reg-bg">
@@ -66,7 +65,7 @@ if(isset($_POST['registerButton'])) {
           <p>
             <?php echo $account->getError(Constants::$loginFailed); ?>
             <label for="loginUsername">Username</label>
-            <input id="loginUsername" name="loginUsername" type="text" placeholder="Jos" required>
+            <input id="loginUsername" name="loginUsername" type="text" placeholder="Jos" value="<?php getInputValue('loginUsername'); ?>" required>
           </p>
           <p>
             <label for="loginPassword">Password</label>
@@ -132,6 +131,17 @@ if(isset($_POST['registerButton'])) {
           </div>
         </form>
       </div>
+
+      <div id="loginText">
+        <h1>Free music<br> for free people</h1>
+        <h2>Listen to all kind of music for free!</h2>
+        <ul>
+          <li>Discover new music</li>
+          <li>Create your own playlists</li>
+          <li>Follow artists and be up to date</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </body>
