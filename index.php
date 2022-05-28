@@ -16,14 +16,50 @@ if (isset($_SESSION['userLoggedIn'])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jostify</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
   <h1>Jostify</h1>
-</body>
 
-<footer id="nowPlayingBarContainer">
-  jos
-</footer>
+  <footer id="nowPlayingBarContainer">
+    <div id="nowPlayingBar">
+      <div id="nowPlayingLeft">
+
+      </div>
+      <div id="nowPlayingCenter">
+        <div class="content playerControls">
+          <div class="buttons">
+            <button class="controlButton shuffle" title="shuffle button">
+              <img src="assets/svg/arrows-shuffle-2.svg" alt="shuffle">
+            </button>
+            <button class="controlButton previous" title="previous button">
+              <img src="assets/svg/player-skip-back.svg" alt="previous">
+            </button>
+            <button class="controlButton play" title="play button">
+              <img src="assets/svg/player-play.svg" alt="play">
+            </button>
+            <button class="controlButton pause" title="pause button" style="display: none;">
+              <img src="assets/svg/player-pause.svg" alt="pause">
+            </button>
+            <button class="controlButton next" title="next button">
+              <img src="assets/svg/player-skip-forward.svg" alt="next">
+            </button>
+            <button class="controlButton repeat" title="repeat button">
+              <img src="assets/svg/repeat.svg" alt="repeat">
+            </button>
+            <!-- <button class="controlButton shuffle" title="shuffle button">
+              <img src="assets/svg/" alt="">
+            </button> -->
+
+          </div>
+        </div>
+      </div>
+      <div id="nowPlayingRight">
+
+      </div>
+    </div>
+  </footer>
+</body>
 
 </html>

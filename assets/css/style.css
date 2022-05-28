@@ -1,0 +1,82 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  box-sizing: border-box;
+  color: #fafafa;
+  
+}
+
+
+
+#nowPlayingBarContainer {
+  
+    width: 100%;
+    min-width: 620px;
+    background-color: #282838;
+    /* height: 100px; */
+    position: fixed;
+    bottom: 0;
+}
+
+#nowPlayingBar {
+  display: flex;
+  height: 90px;
+  padding: 1em;
+}
+
+#nowPlayingLeft,
+#nowPlayingRight  {
+  width: 30%;
+  min-width: 180px
+}
+
+#nowPlayingCenter {
+  width: 40%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#nowPlayingbar .content {
+  width: 100%;
+}
+
+.playerControls buttons {
+  margin: 0 auto;
+  display: table;
+}
+
+
+.buttons .controlButton {
+  background-color: transparent;
+  border: none;
+  vertical-align: middle;
+
+
+}
+
+.controlButton img {
+  filter: invert(1);
+  width: 20px;
+  height: 20px;
+}
+
+.controlButton img[src="assets/svg/player-play.svg"] {
+  filter: invert(1);
+  width: 25px;
+  height: 25px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  padding: 5px;
+}
+.controlButton img[src="assets/svg/player-play.svg"]:hover,
+.controlButton img[src="assets/svg/player-play.svg"]:focus,
+.controlButton img[src="assets/svg/player-pause.svg"]:hover,
+.controlButton img[src="assets/svg/player-pause.svg"]:focus  {
+  box-shadow: 0px 0px 8px 3px #faf;
+}
+
+
