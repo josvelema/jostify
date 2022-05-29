@@ -7,7 +7,10 @@ body {
   color: #fafafa;
   
 }
-
+* {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #fafafa;
+}
 
 
 #nowPlayingBarContainer {
@@ -32,6 +35,11 @@ body {
   min-width: 180px
 }
 
+#nowPlayingRight  {
+  position: relative;
+  margin-top: 0.5em;
+}
+
 #nowPlayingCenter {
   width: 40%;
   max-width: 600px;
@@ -42,6 +50,7 @@ body {
 
 #nowPlayingbar .content {
   width: 100%;
+  height: 3em;
 }
 
 .playerControls buttons {
@@ -120,3 +129,44 @@ body {
 	margin-top: 3px;
 }
 
+#nowPlayingLeft .albumArtwork {
+  height: 100%;
+  max-width: 57px;
+  margin-right: 1em;
+  float: left;
+  background-size: cover;
+  filter: drop-shadow(4px 4px 6px rgba(23, 7, 20, 0.55))
+}
+
+#nowPlayingLeft .trackInfo {
+	display: table;
+}
+
+#nowPlayingLeft .trackInfo .trackName {
+	margin: 0.3em 0;
+    display: inline-block;
+    width: 100%;
+}
+
+#nowPlayingLeft .trackInfo .artistName span {
+	font-size: 0.8rem;
+    color: hsl(132, 33%, 57%);
+}
+
+.volumeBar {
+	width: 180px;
+    position: absolute;
+    right: 0;
+}
+
+.volumeBar .progressBar {
+	width: 125px;
+}
+
+.controlButton img[src="assets/svg/volume.svg"] {
+  background: transparent;
+}
+button.controlButton {
+  background: none;
+  border: none;
+}

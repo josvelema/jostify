@@ -24,9 +24,26 @@ if (isset($_SESSION['userLoggedIn'])) {
 
   <footer id="nowPlayingBarContainer">
     <div id="nowPlayingBar">
-      <div id="nowPlayingLeft">
 
+      <div id="nowPlayingLeft">
+        <div class="content">
+
+          <span class="albumLink">
+            <img src="//unsplash.it/200/200" alt="" class="albumArtwork">
+          </span>
+
+          <div class="trackInfo">
+            <span class="trackName">
+              <span>some track name</span>
+            </span>
+            <span class="artistName">
+              <span>artist name</span>
+            </span>
+          </div>
+
+        </div>
       </div>
+
       <div id="nowPlayingCenter">
         <div class="content playerControls">
           <div class="buttons">
@@ -70,9 +87,24 @@ if (isset($_SESSION['userLoggedIn'])) {
 
         </div>
       </div>
+
       <div id="nowPlayingRight">
 
+        <div class="volumeBar">
+          <button class="controlButton volume" title="volume button">
+            <img src="assets/svg/volume.svg" alt="Volume">
+          </button>
+
+          <div class="progressBar">
+            <div class="progressBarBg">
+              <div class="progress"></div>
+            </div>
+          </div>
+
+        </div>
+
       </div>
+
     </div>
   </footer>
 </body>
