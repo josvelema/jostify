@@ -1,20 +1,17 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  box-sizing: border-box;
-  color: #fafafa;
-  
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    box-sizing: border-box;
+    color: #fafafa;
 }
 * {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fafafa;
 }
 
-
 #nowPlayingBarContainer {
-  
     width: 100%;
     min-width: 620px;
     background-color: #282838;
@@ -24,149 +21,208 @@ body {
 }
 
 #nowPlayingBar {
-  display: flex;
-  height: 90px;
-  padding: 1em;
+    display: flex;
+    height: 90px;
+    padding: 1em;
 }
 
 #nowPlayingLeft,
-#nowPlayingRight  {
-  width: 30%;
-  min-width: 180px
+#nowPlayingRight {
+    width: 30%;
+    min-width: 180px;
 }
 
-#nowPlayingRight  {
-  position: relative;
-  margin-top: 0.5em;
+#nowPlayingRight {
+    position: relative;
+    margin-top: 0.5em;
 }
 
 #nowPlayingCenter {
-  width: 40%;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    width: 40%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #nowPlayingbar .content {
-  width: 100%;
-  height: 3em;
+    width: 100%;
+    height: 3em;
 }
 
 .playerControls buttons {
-  margin: 0 auto;
-  display: table;
+    margin: 0 auto;
+    display: table;
 }
 
-
 .buttons .controlButton {
-  background-color: transparent;
-  border: none;
-  vertical-align: middle;
-
-
+    background-color: transparent;
+    border: none;
+    vertical-align: middle;
 }
 
 .buttons .controlButton:hover {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .controlButton img {
-  filter: invert(1);
-  width: 20px;
-  height: 20px;
+    filter: invert(1);
+    width: 20px;
+    height: 20px;
 }
 
 .controlButton img[src="assets/svg/player-play.svg"] {
-  filter: invert(1);
-  width: 25px;
-  height: 25px;
-  border: 1px solid #000;
-  border-radius: 50%;
-  padding: 5px;
+    filter: invert(1);
+    width: 25px;
+    height: 25px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    padding: 5px;
 }
 .controlButton img[src="assets/svg/player-play.svg"]:hover,
 .controlButton img[src="assets/svg/player-play.svg"]:focus,
 .controlButton img[src="assets/svg/player-pause.svg"]:hover,
-.controlButton img[src="assets/svg/player-pause.svg"]:focus  {
-  box-shadow: 0px 0px 8px 3px #faf;
+.controlButton img[src="assets/svg/player-pause.svg"]:focus {
+    box-shadow: 0px 0px 8px 3px #faf;
 }
 
-
 .progressTime {
-	color: #a0a0a0;
+    color: #a0a0a0;
     font-size: 11px;
     min-width: 40px;
     text-align: center;
 }
 
 .playbackBar {
-	display: flex;
+    display: flex;
 }
 
 .progressBar {
-	width: 100%;
+    width: 100%;
     height: 12px;
     display: inline-flex;
     cursor: pointer;
 }
 
 .progressBarBg {
-	background-color: #404040;
+    background-color: #404040;
     height: 4px;
     width: 100%;
     border-radius: 2px;
 }
 
 .progress {
-	background-color: #a0a0a0;
+    background-color: #a0a0a0;
     height: 4px;
     width: 0;
     border-radius: 2px;
 }
 
 .playbackBar .progressBar {
-	margin-top: 3px;
+    margin-top: 3px;
 }
 
 #nowPlayingLeft .albumArtwork {
-  height: 100%;
-  max-width: 57px;
-  margin-right: 1em;
-  float: left;
-  background-size: cover;
-  filter: drop-shadow(4px 4px 6px rgba(23, 7, 20, 0.55))
+    height: 100%;
+    max-width: 57px;
+    margin-right: 1em;
+    float: left;
+    background-size: cover;
+    filter: drop-shadow(4px 4px 6px rgba(23, 7, 20, 0.55));
 }
 
 #nowPlayingLeft .trackInfo {
-	display: table;
+    display: table;
 }
 
 #nowPlayingLeft .trackInfo .trackName {
-	margin: 0.3em 0;
+    margin: 0.3em 0;
     display: inline-block;
     width: 100%;
 }
 
 #nowPlayingLeft .trackInfo .artistName span {
-	font-size: 0.8rem;
+    font-size: 0.8rem;
     color: hsl(132, 33%, 57%);
 }
 
 .volumeBar {
-	width: 180px;
+    width: 180px;
     position: absolute;
     right: 0;
 }
 
 .volumeBar .progressBar {
-	width: 125px;
+    width: 125px;
 }
 
 .controlButton img[src="assets/svg/volume.svg"] {
-  background: transparent;
+    background: transparent;
 }
 button.controlButton {
-  background: none;
-  border: none;
+    background: none;
+    border: none;
+}
+
+#topContainer {
+    min-height: 100%;
+    width: 100%;
+}
+
+#navBarContainer {
+    background-color: #282838;
+    width: clamp(212px, 30vw, 300px);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.navBar {
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+  margin-bottom: 0.75em;
+}
+
+.logo img {
+    width: 180px;
+    height: auto;
+    filter: drop-shadow(0px 4px 3px purple);
+    padding: 0.25em;
+}
+
+.navBar .group {
+    border-top: 1px solid #3d4d5d;
+    padding: 0.25em 0;
+}
+
+.navItem {
+    padding: 0.5em 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: block;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.navItemLink {
+    color: #f8f0fa;
+    text-decoration: none;
+}
+
+.navItemLink:hover {
+  color: #cd58c3;
+  text-decoration: dotted;
+  text-decoration-thickness: 1px;
+  text-decoration-line: underline;
+}
+
+.icon {
+  position: absolute;
+  right: 0;
+  top: 8px;
 }
