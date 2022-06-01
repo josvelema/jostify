@@ -1,44 +1,29 @@
-<?php
-include("includes/config.php");
+<?php include("includes/header.php"); ?>
 
-if (isset($_SESSION['userLoggedIn'])) {
-  $userLoggedIn = $_SESSION['userLoggedIn'];
-} else {
-  header("Location: register.php");
-}
-?>
+<h1 class="pageHeadingBig">You might also like</h1>
 
-<!DOCTYPE html>
-<html lang="en">
+<div class="gridViewContainer">
+  <?php
+  $albumQuery = mysqli_query($con, "SELECT * FROM albums ORDER BY RAND() LIMIT 10");
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jostify</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
+  while ($row = mysqli_fetch_array($albumQuery)) {
+echo '
+<div class="gridViewItem">
+<a href="album.php?id=' . $row['id'] . '"> 
+<img src="' . $row['artworkPath'] . '" alt="'
+. $row['title'] . 
+'">
+<div class="gridViewInfo">'
+ . $row['title'] . 
+ '
 
-<body>
-  <main id="mainContainer">
+</div>
+</a>
+</div>
 
-    <section id="topContainer">
+  ';
+  }
+  ?>
+</div>
 
-      <?php include("includes/navbar.php") ?>
-
-      <div id="mainViewContainer">
-        <div id="mainContent">
-          <h1>hoi</h1>
-        </div>
-      </div>
-
-    </section>
-
-    <?php include("includes/nowplayingbar.php") ?>
-
-  </main>
-
-
-</body>
-
-</html>
+<?php include("includes/footer.php"); ?>

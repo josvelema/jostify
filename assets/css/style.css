@@ -11,6 +11,7 @@ body {
 * {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #fafafa;
+    letter-spacing: 1px;
 }
 
 #nowPlayingBarContainer {
@@ -238,7 +239,44 @@ button.controlButton {
     top: 8px;
 }
 
-.mainViewContainer {
+#mainViewContainer {
     width: 100%;
     height: auto;
+}
+#mainContent {
+  padding: 0 20px;
+}
+
+.pageHeadingBig {
+  font-size: 2rem;
+  padding: 1em;
+  text-align: center;
+}
+
+.gridViewItem {
+  display: inline-block;
+  margin:0 20px 20px 0;
+  width: 29%;
+  max-width: 200px;
+  min-width: 100px;
+  
+}
+
+.gridViewItem img {
+  width: 100%;
+}
+
+.gridViewInfo {
+  font-weight: 300;
+  text-align: center;
+  padding: 5px 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
+}
+
+.gridViewItem a{
+  text-decoration: none;
+  
 }
