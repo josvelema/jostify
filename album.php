@@ -42,28 +42,28 @@ $artist = $album->getArtist();
 
       $albumArtist = $albumSong->getArtist();
 
-      echo "<li class='trackListRow'>
-      <div class='trackCount'>
-      <img class='play' src='assets/svg/player-play.svg'>
-      <span class='trackNumber'>$i</span>
-      </div>
-
-      <div class='trackInfo'>
-      <span class='trackName'>" . $albumSong->getTitle() . "</span>
-      <span class='artistName'>" . $albumArtist->getName() . "</span>
-      </div>
-
-      <div class='trackOptions'>
-      <img class='optionsButton' src='assets/svg/player-play.svg'>
-      </div>
-
-      <div class='trackDuration'>
-      <span class='duration'>" . $albumSong->getDuration() . "</span>
-
-      </div>
+			echo "<li class='tracklistRow'>
+					<div class='trackCount'>
+						<img class='play' src='assets/svg/player-play.svg'>
+						<span class='trackNumber'>$i</span>
+					</div>
 
 
-      </li>";
+					<div class='trackInfo'>
+						<span class='trackName'>" . $albumSong->getTitle() . "</span>
+						<span class='artistName'>" . $albumArtist->getName() . "</span>
+					</div>
+
+					<div class='trackOptions'>
+						<img class='optionsButton' src='assets/svg/dots-vertical.svg'>
+					</div>
+
+					<div class='trackDuration'>
+						<span class='duration'>" . $albumSong->getDuration() . "</span>
+					</div>
+
+
+				</li>";
 
       $i++;
     }
