@@ -1,3 +1,72 @@
+<?php
+
+$songQuery = mysqli_query($con, "SELECT id from songs ORDER BY RAND() LIMIT 10");
+
+$resultArray = array();
+
+while ($row = mysqli_fetch_array($songQuery)) {
+  array_push($resultArray, $row['id']);
+}
+
+$jsonArray = json_encode($resultArray);
+
+?>
+
+<script>
+  $(document).ready(function() {
+    currentPlaylist = <?php echo $jsonArray; ?>;
+    audioElement = new Audio();
+    setTrack(currentPlaylist[0], currentPlaylist, false);
+
+
+  });
+
+  function setTrack(trackId, newPlaylist, play) {
+
+    $.post("includes/handlers/ajax/getSongJSON.php", {
+      songId: trackId
+    }, function(data) {
+
+      var track = JSON.parse(data);
+
+      $(".trackName span").text(track.title);
+
+      $.post("includes/handlers/ajax/getArtistJSON.php", {
+        artistId: track.artist
+      }, function(data) {
+        var artist = JSON.parse(data);
+
+        $(".artistName span").text(artist.name);
+      });
+
+
+      audioElement.setTrack(track.path);
+      audioElement.play();
+    });
+
+    if (play == true) {
+      audioElement.play();
+    }
+  }
+
+
+
+  function playSong() {
+    audioElement.play();
+    $(".controlButton.play").hide();
+    $(".controlButton.pause").show();
+  }
+
+
+  function pauseSong() {
+    $(".controlButton.pause").hide();
+    $(".controlButton.play").show();
+    audioElement.pause();
+  }
+</script>
+
+
+
 <footer id="nowPlayingBarContainer">
   <div id="nowPlayingBar">
 
@@ -10,10 +79,10 @@
 
         <div class="trackInfo">
           <span class="trackName">
-            <span>some track name</span>
+            <span></span>
           </span>
           <span class="artistName">
-            <span>artist name</span>
+            <span></span>
           </span>
         </div>
 
@@ -30,9 +99,9 @@
             <img src="assets/svg/player-skip-back.svg" alt="previous">
           </button>
           <button class="controlButton play" title="play button">
-            <img src="assets/svg/player-play.svg" alt="play">
+            <img src="assets/svg/player-play.svg" alt="play" onclick="playSong()">
           </button>
-          <button class="controlButton pause" title="pause button" style="display: none;">
+          <button class="controlButton pause" title="pause button" style="display: none;" onclick="pauseSong()">
             <img src="assets/svg/player-pause.svg" alt="pause">
           </button>
           <button class="controlButton next" title="next button">

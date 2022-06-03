@@ -22,10 +22,21 @@ if (isset($_SESSION['userLoggedIn'])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jostify</title>
+
   <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script src="assets/js/script.js"></script>
 </head>
 
 <body>
+
+  <script>
+    // let audioElement = new Audio();
+    // audioElement.setTrack("assets/music/bensound-anewbeginning.mp3");
+    // audioElement.audio.play();
+  </script>
+
   <main id="mainContainer">
 
     <section id="topContainer">
@@ -34,6 +45,3 @@ if (isset($_SESSION['userLoggedIn'])) {
 
       <div id="mainViewContainer">
         <div id="mainContent">
-
-   
-          
