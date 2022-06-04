@@ -39,9 +39,17 @@ $jsonArray = json_encode($resultArray);
         $(".artistName span").text(artist.name);
       });
 
+      $.post("includes/handlers/ajax/getAlbumJSON.php", {
+        albumId: track.album
+      }, function(data) {
+        var album = JSON.parse(data);
+
+        $(".albumLink img").attr("src",album.artworkPath);
+      });
+
 
       audioElement.setTrack(track.path);
-      audioElement.play();
+      playSong();
     });
 
     if (play == true) {
@@ -74,7 +82,7 @@ $jsonArray = json_encode($resultArray);
       <div class="content">
 
         <span class="albumLink">
-          <img src="//unsplash.it/200/200" alt="" class="albumArtwork">
+          <img src="" alt="" class="albumArtwork">
         </span>
 
         <div class="trackInfo">
