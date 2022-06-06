@@ -204,13 +204,13 @@ $jsonArray = json_encode($resultArray);
 
 
       audioElement.setTrack(track);
-      playSong();
+
+      if (play == true) {
+        playSong();
+
+      }
     });
 
-    if (play == true) {
-      // audioElement.play();
-      playSong()
-    }
   }
 
 
