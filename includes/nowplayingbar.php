@@ -191,7 +191,10 @@ $jsonArray = json_encode($resultArray);
       }, function(data) {
         var artist = JSON.parse(data);
 
-        $(".artistName span").text(artist.name);
+        $(".trackInfo .artistName span").text(artist.name);
+        $(".trackInfo .artistName span").attr("onclick", "openPage('artist.php?id=" + artist.id + "')");
+
+
       });
 
       $.post("includes/handlers/ajax/getAlbumJSON.php", {
@@ -199,7 +202,11 @@ $jsonArray = json_encode($resultArray);
       }, function(data) {
         var album = JSON.parse(data);
 
-        $(".albumLink img").attr("src", album.artworkPath);
+        $(".content .albumLink img").attr("src", album.artworkPath);
+        $(".content .albumLink img").attr("onclick", "openPage('album.php?id=" + album.id + "')");
+        $(".trackInfo .trackName span").attr("onclick", "openPage('album.php?id=" + album.id + "')");
+
+
       });
 
 
@@ -244,15 +251,15 @@ $jsonArray = json_encode($resultArray);
       <div class="content">
 
         <span class="albumLink">
-          <img src="" alt="" class="albumArtwork">
+          <img role="link" tabindex="0" src="" alt="" class="albumArtwork">
         </span>
 
         <div class="trackInfo">
           <span class="trackName">
-            <span></span>
+            <span role="link" tabindex="0"></span>
           </span>
           <span class="artistName">
-            <span></span>
+            <span role="link" tabindex="0"></span>
           </span>
         </div>
 
