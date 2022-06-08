@@ -70,7 +70,7 @@ $owner = new User($con, $playlist->getOwner());
 
     ?>
     <script>
-      let tempSongIds = '<?php echo json_encode($songIdArray); ?>';
+      var tempSongIds = '<?php echo json_encode($songIdArray); ?>';
       tempPlaylist = JSON.parse(tempSongIds);
     </script>
 

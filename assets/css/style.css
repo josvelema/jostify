@@ -483,3 +483,42 @@ input:focus {
     border: 3px solid #1d2d3d;
     padding: 0.25em;
 }
+
+.optionsMenu {
+    position: fixed;
+    background-color: #1d3d3d;
+    width: 200px;
+    border: 1px solid #aa88ff;
+    border-radius: 3px;
+    padding: 0.3em;
+    z-index: 998;
+    display: none;
+}
+
+.optionsMenu .item {
+    width: 100%;
+    padding: 0.3em 0.7em;
+    margin: 1px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-weight: 400;
+    cursor: pointer;
+    height: 40px;
+    border: 1px solid hsla(240, 20%, 25%);
+}
+
+.optionsMenu .item:hover,
+.optionsMenu .item:focus {
+    background-color: hsla(240, 20%, 25%);
+    border: 1px solid #aa88ff;
+}
+
+.optionsMenu select {
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    font-size: inherit;
+}
+
+

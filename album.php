@@ -44,7 +44,7 @@ $artistId = $artist->getId();
 
       $albumArtist = $albumSong->getArtist();
 
-			echo "<li class='tracklistRow'>
+      echo "<li class='tracklistRow'>
 					<div class='trackCount'>
 						<img class='play' src='assets/svg/player-play.svg'
              onclick='setTrack(\"" . $albumSong->getId() . "\", tempPlaylist, true)'>
@@ -58,7 +58,8 @@ $artistId = $artist->getId();
 					</div>
 
 					<div class='trackOptions'>
-						<img class='optionsButton' src='assets/svg/dots-vertical.svg'>
+          <input type='hidden' class='songId' value='" . $albumSong->getId() . "'>
+						<img class='optionsButton' src='assets/svg/dots-vertical.svg' onclick='showOptionsMenu(this)'>
 					</div>
 
 					<div class='trackDuration'>
@@ -72,14 +73,20 @@ $artistId = $artist->getId();
     }
 
     ?>
-<script>
-let tempSongIds = '<?php echo json_encode($songIdArray); ?>';
-tempPlaylist = JSON.parse(tempSongIds);
-
-
-</script>
+    <script>
+      let tempSongIds = '<?php echo json_encode($songIdArray); ?>';
+      tempPlaylist = JSON.parse(tempSongIds);
+    </script>
 
   </ul>
 </div>
 
+<nav class="optionsMenu">
+  <input type="hidden" name="" class="songId">
+  <?php echo Playlist::getPlaylistsDropdown($con , $userLoggedIn->getUsername()); ?>
 
+  <div class="item">item2</div>
+  <div class="item">item3</div>
+
+
+</nav>
