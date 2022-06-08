@@ -328,7 +328,6 @@ button.controlButton {
     background-color: #282838;
 }
 
-
 .tracklistRow .trackCount {
     width: 8%;
     float: left;
@@ -408,7 +407,9 @@ button.controlButton {
 .button.green {
     background-color: hsl(138, 61%, 46%);
     border-color: hsl(138, 61%, 26%);
-
+    text-shadow: 1px 1px 1px black;
+    display: block;
+    margin: 0 auto 1em auto;
 }
 
 .borderBottom {
@@ -427,17 +428,16 @@ button.controlButton {
     cursor: pointer;
 }
 
-
 .searchContainer {
     background-color: #121222;
     padding: 20px 28px;
     border-bottom: 1px solid hsla(210, 21%, 30%, 50%);
 }
 
-.searchContainer h4{
-margin: 0;
-padding: 0.5em;
-font-weight: 400;
+.searchContainer h4 {
+    margin: 0;
+    padding: 0.5em;
+    font-weight: 400;
 }
 
 .searchInput {
@@ -461,11 +461,20 @@ input:focus {
 
 .searchResultRow:hover,
 .searchResultRow:focus {
-    background-color: hsla(240, 20%, 25%) ;
+    background-color: hsla(240, 20%, 25%);
 }
 
 .noResults {
     margin: 0.75em;
     display: block;
     color: hsl(16, 63%, 70%);
+}
+
+.buttonItems .button {
+    display: block;
+    margin: 0 auto 1em auto;
+}
+
+.playlistsContainer {
+    padding: 0.5em 0;
 }
