@@ -74,7 +74,8 @@ if (isset($_GET['term'])) {
 					</div>
 
 					<div class='trackOptions'>
-						<img class='optionsButton' src='assets/svg/dots-vertical.svg'>
+          <input type='hidden' class='songId' value='" . $albumSong->getId() . "'>
+						<img class='optionsButton' src='assets/svg/dots-vertical.svg' onclick='showOptionsMenu(this)'>
 					</div>
 
 					<div class='trackDuration'>
@@ -152,3 +153,8 @@ if (isset($_GET['term'])) {
   ?>
 </section>
 
+<nav class="optionsMenu">
+  <input type="hidden" name="" class="songId">
+  <?php echo Playlist::getPlaylistsDropdown($con, $userLoggedIn->getUsername()); ?>
+
+</nav>
