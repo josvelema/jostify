@@ -20,22 +20,23 @@ $(window).scroll(function () {
     hideOptionsMenu();
 });
 
-$(document).on("change", "select.playlist", function() {
-	var select = $(this);
-	var playlistId = select.val();
-	var songId = select.prev(".songId").val();
+$(document).on("change", "select.playlist", function () {
+    var select = $(this);
+    var playlistId = select.val();
+    var songId = select.prev(".songId").val();
 
-	$.post("includes/handlers/ajax/addToPlaylist.php", { playlistId: playlistId, songId: songId})
-	.done(function(error) {
+    $.post("includes/handlers/ajax/addToPlaylist.php", {
+        playlistId: playlistId,
+        songId: songId,
+    }).done(function (error) {
+        // if(error != "") {
+        // 	alert(error);
+        // 	return;
+        // }
 
-		// if(error != "") {
-		// 	alert(error);
-		// 	return;
-		// }
-
-		hideOptionsMenu();
-		select.val("");
-	});
+        hideOptionsMenu();
+        select.val("");
+    });
 });
 
 function openPage(url) {
@@ -56,7 +57,8 @@ function openPage(url) {
 function removeFromPlaylist(button, playlistId) {
     let songId = $(button).prevAll(".songId").val();
     $.post("includes/handlers/ajax/removeFromPlaylist.php", {
-        playlistId: playlistId, songId: songId
+        playlistId: playlistId,
+        songId: songId,
     }).done(function (error) {
         if (error != "") {
             alert(error);
@@ -66,9 +68,7 @@ function removeFromPlaylist(button, playlistId) {
         //do something when ajax returns
         openPage("playlist.php?id=" + playlistId);
     });
-
 }
-
 
 function createPlaylist() {
     console.log(userLoggedIn);
@@ -210,4 +210,44 @@ function Audio() {
     this.setTime = function (seconds) {
         this.audio.currentTime = seconds;
     };
+}
+
+function logOut() {
+    $.post("includes/handlers/ajax/logout.php", function () {
+        location.reload();
+    });
+}
+
+function updateEmail(emailClass) {
+    let emailValue = $("." + emailClass).val();
+
+    $.post("includes/handlers/ajax/updateEmail.php", {
+        email: emailValue,
+        username: userLoggedIn,
+    }).done(function (response) {
+        $("." + emailClass)
+            .nextAll(".message")
+            .text(response);
+    });
+}
+
+function updatePassword(
+    oldPasswordClass,
+    newPasswordClass1,
+    newPasswordClass2
+) {
+    let oldPassword = $("." + oldPasswordClass).val();
+    let newPassword1 = $("." + newPasswordClass1).val();
+    let newPassword2 = $("." + newPasswordClass2).val();
+
+    $.post("includes/handlers/ajax/updatePassword.php", {
+        oldPassword: oldPassword,
+        newPassword1: newPassword1,
+        newPassword2: newPassword2,
+        username: userLoggedIn,
+    }).done(function (response) {
+        $("." + oldPasswordClass)
+            .nextAll(".message")
+            .text(response);
+    });
 }
